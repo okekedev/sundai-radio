@@ -22,7 +22,8 @@ app = dash.Dash(
         'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'
     ],
     assets_folder='assets',
-    suppress_callback_exceptions=True
+    suppress_callback_exceptions=True,
+    server=app.server if 'server' in locals() else None
 )
 
 def create_layout():
@@ -134,4 +135,4 @@ def toggle_sleep_timer(n1, n2, t15, t30, t60, t120, is_open):
     return is_open
 
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8081, host='0.0.0.0') 
+    app.run_server(debug=False, port=8081, host='0.0.0.0') 
