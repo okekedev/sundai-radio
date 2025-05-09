@@ -18,8 +18,11 @@ RUN pip install --no-cache-dir -r requirements.txt gunicorn
 # Copy the rest of the application
 COPY . .
 
+# Add src directory to Python path
+ENV PYTHONPATH=/app/src
+
 # Expose the port the app runs on
-EXPOSE 8081
+EXPOSE 8080
 
 # Command to run the application with gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8081", "src.app:server"] 
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:server"] 
