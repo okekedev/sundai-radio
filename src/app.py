@@ -134,4 +134,4 @@ def toggle_sleep_timer(n1, n2, t15, t30, t60, t120, is_open):
     return is_open
 
 if __name__ == "__main__":
-    app.run_server(debug=True, port=8081) 
+    app.run_server(debug=True, port=8081, host='0.0.0.0') 
