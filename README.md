@@ -2,7 +2,7 @@
 
 A beautiful, retro-styled web radio player built with Dash and Python. This application provides a curated selection of Christian music channels with a 1940s-inspired design.
 
-![Sundai Radio Player](https://github.com/okekedev/RadioPlayer/raw/main/screenshot.png)
+![Sundai Radio Player](src/assets/example.png)
 
 ## Features
 
@@ -25,18 +25,18 @@ A beautiful, retro-styled web radio player built with Dash and Python. This appl
 
 ```bash
 # Pull the image
-docker pull ghcr.io/okekedev/radioplayer:latest
+docker pull ghcr.io/okekedev/sundai-radio:latest
 
 # Run the container
-docker run -p 8081:8081 ghcr.io/okekedev/radioplayer:latest
+docker run -p 8081:8081 ghcr.io/okekedev/sundai-radio:latest
 ```
 
 ### Local Development
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/okekedev/RadioPlayer.git
-cd RadioPlayer
+git clone https://github.com/okekedev/sundai-radio.git
+cd sundai-radio
 ```
 
 2. Create and activate a virtual environment:
