@@ -15,8 +15,11 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt gunicorn
 
-# Copy the rest of the application
-COPY . .
+# Copy the application code
+COPY src/ /app/src/
+
+# Copy assets to the correct location
+COPY src/assets/ /app/src/assets/
 
 # Add src directory to Python path
 ENV PYTHONPATH=/app/src
