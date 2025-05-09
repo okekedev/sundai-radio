@@ -2,7 +2,7 @@
 
 A beautiful, retro-styled web radio player built with Dash and Python. This application provides a curated selection of Christian music channels with a 1940s-inspired design.
 
-![Sundai Radio Player](src/assets/example.png)
+![Sundai Radio Player](example.png)
 
 ## Features
 
