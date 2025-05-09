@@ -18,7 +18,12 @@ from utils.music_categories import MusicCategory
 app = dash.Dash(
     __name__,
     suppress_callback_exceptions=True,
-    external_stylesheets=[dbc.themes.BOOTSTRAP],
+    external_stylesheets=[
+        dbc.themes.BOOTSTRAP,
+        'https://fonts.googleapis.com/css2?family=American+Typewriter:wght@400;700&display=swap',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'
+    ],
+    assets_folder='assets',
     server=Flask(__name__)  # Explicitly create Flask server
 )
 server = app.server  # Expose the Flask server instance
