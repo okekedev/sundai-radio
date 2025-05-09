@@ -6,6 +6,7 @@ import numpy as np
 from datetime import datetime, timedelta
 import threading
 import time
+from flask import Flask
 
 # Import custom components
 from components.category_grid import create_category_grid
@@ -16,15 +17,11 @@ from utils.music_categories import MusicCategory
 # Initialize the Dash app with Bootstrap
 app = dash.Dash(
     __name__,
-    external_stylesheets=[
-        dbc.themes.BOOTSTRAP,
-        'https://fonts.googleapis.com/css2?family=American+Typewriter:wght@400;700&display=swap',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'
-    ],
-    assets_folder='assets',
     suppress_callback_exceptions=True,
-    server=app.server if 'server' in locals() else None
+    external_stylesheets=[dbc.themes.BOOTSTRAP],
+    server=Flask(__name__)  # Explicitly create Flask server
 )
+server = app.server  # Expose the Flask server instance
 
 def create_layout():
     """Create the main layout of the application."""
@@ -135,4 +132,4 @@ def toggle_sleep_timer(n1, n2, t15, t30, t60, t120, is_open):
     return is_open
 
 if __name__ == "__main__":
-    app.run_server(debug=False, port=8081, host='0.0.0.0') 
+    app.run_server(debug=False, port=8080, host='0.0.0.0') 
